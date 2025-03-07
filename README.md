@@ -6,10 +6,9 @@ The goal of this project is to automate the process of identifying the genre of 
 
 ---
 
-## Image Requirements
 
-### 1. **Bot Inference**  
-   - Image name: `asset/1.png`  
+
+###  **Bot Inference**   
    <p align="center">
      <img src="asset/1.png" alt="Inference"/>
    </p>
@@ -72,8 +71,8 @@ The goal of this project is to automate the process of identifying the genre of 
 
 ---
 
-### 2. **Bot Interface**  
-   - Image name: `asset/2.png`  
+### **Bot Interface**  
+ 
    <p align="center">
      <img src="asset/2.png" alt="Interface"/>
    </p>
