@@ -1,4 +1,3 @@
-```markdown
 # 🎬 MOVIE GENRE REVEL BOT 🤖
 
 ## Description
