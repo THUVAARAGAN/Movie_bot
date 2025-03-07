@@ -1,7 +1,3 @@
-To place the first image at the top of the README and the second image at the bottom, you can organize your Markdown as follows:
-
-### Example README Markdown:
-
 ```markdown
 # 🎬 MOVIE GENRE REVEL BOT 🤖
 
