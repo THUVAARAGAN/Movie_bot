@@ -4,8 +4,13 @@ import json
 import openai
 import time
 
+from dotenv import load_dotenv
+import os
 
-api_key = "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"
+load_dotenv(dotenv_path="../.env.example")
+
+api_key=os.getenv("OPENAI_API_KEY")
+
 df = pd.read_csv("../Dataset/genre_counts.csv") # Dataset
 prompt = "A model that takes in a complex paragraph of a movie synopsis and classifies it into one of the following genres: 'action,' 'adventure,' 'crime,' 'family,' 'fantasy,' 'horror,' 'mystery,' 'romance,' 'scifi,' or 'thriller.' The model will output one of these genres based on the given movie synopsis."
 
