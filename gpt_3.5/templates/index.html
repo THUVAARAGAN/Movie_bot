@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Genre Predictor</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background-color: #f4f4f4;
+        }
+        h1 {
+            color: #040000;
+        }
+        textarea {
+            width: 80%;
+            height: 150px;
+            padding: 10px;
+            font-size: 16px;
+            margin-top: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        button {
+            margin-top: 10px;
+            padding: 10px 20px;
+            font-size: 18px;
+            background-color: #1a8b35;
+            color: rgb(241, 223, 223);
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        .genres {
+            margin-top: 20px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
+            max-width: 600px;
+        }
+        .genre-btn {
+            padding: 10px 15px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            background-color: white;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+        }
+        .selected {
+            background-color: #28a745 !important;
+            color: white;
+            border: none;
+            box-shadow: 0px 0px 15px rgba(40, 167, 69, 0.8); /* Glowing effect */
+        }
+        .result {
+            margin-top: 20px;
+            font-size: 24px;
+            font-weight: bold;
+            color: #070000;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Movie Genre Predictor</h1>
+    
+    <form method="POST">
+        <textarea name="synopsis" placeholder="Enter the movie synopsis here..." required></textarea>
+        <br>
+        <button type="submit">Predict Genre</button>
+    </form>
+
+    <div class="genres">
+        {% set predicted_genre = genre|lower %}
+        <button class="genre-btn {% if predicted_genre == 'action' %}selected{% endif %}">Action</button>
+        <button class="genre-btn {% if predicted_genre == 'adventure' %}selected{% endif %}">Adventure</button>
+        <button class="genre-btn {% if predicted_genre == 'crime' %}selected{% endif %}">Crime</button>
+        <button class="genre-btn {% if predicted_genre == 'family' %}selected{% endif %}">Family</button>
+        <button class="genre-btn {% if predicted_genre == 'fantasy' %}selected{% endif %}">Fantasy</button>
+        <button class="genre-btn {% if predicted_genre == 'horror' %}selected{% endif %}">Horror</button>
+        <button class="genre-btn {% if predicted_genre == 'mystery' %}selected{% endif %}">Mystery</button>
+        <button class="genre-btn {% if predicted_genre == 'romance' %}selected{% endif %}">Romance</button>
+        <button class="genre-btn {% if predicted_genre == 'scifi' %}selected{% endif %}">Sci-Fi</button>
+        <button class="genre-btn {% if predicted_genre == 'thriller' %}selected{% endif %}">Thriller</button>
+    </div>
+
+    {% if genre %}
+        <div class="result">
+            Predicted Genre: {{ genre }}
+        </div>
+    {% endif %}
+
+</body>
+</html>
